@@ -1,3 +1,11 @@
+let playerSelection = prompt("Enter Rock, Paper, or Scissors:").toUpperCase();
+
+if (playerSelection == "ROCK" || playerSelection == "PAPER" || playerSelection == "SCISSORS"){
+    console.log(playerSelection);
+} else {
+    playerSelection = prompt("You must enter Rock, Paper, or Scissors:").toUpperCase();
+}
+
 function getComputerChoice(){
     let rps = '';
     let randomNum = parseInt(Math.floor(Math.random()*3));
@@ -13,4 +21,6 @@ function getComputerChoice(){
     return rps;
 }
 
-console.log(getComputerChoice())
+
+
+console.log(getComputerChoice());
