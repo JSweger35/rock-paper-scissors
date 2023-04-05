@@ -4,11 +4,11 @@
     console.log(randomNum);
     console.log(rps);
 
-    if (randomNum = 0){
+    if (randomNum == 0){
         rps = "Rock";
-    } else if (randomNum = 1){
+    } else if (randomNum == 1){
         rps = "Paper"
-    }else if (randomNum = 2){
+    }else if (randomNum == 2){
         rps = "Scissors"
     }
     console.log(rps);
