@@ -31,7 +31,7 @@ if (player == cpu){
     return message;
 }
 
-let winner = '';
+//loops game 5 times and declares overall winner
 function game(){
     let message = '';
     let playerScore = 0;
@@ -59,4 +59,5 @@ function game(){
     }
     return winner;
 }
+
 console.log(game());
