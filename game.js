@@ -31,7 +31,7 @@ if (player == cpu){
     return message;
 }
 
-
+let winner = '';
 function game(){
     let message = '';
     let playerScore = 0;
@@ -40,23 +40,29 @@ function game(){
         let cpu = getComputerChoice();
         let player = playerSelection();
     
-        console.log(playRound(player, cpu));
-
+        message = playRound(player, cpu);
+        console.log(message);
+        //console.log("playerSelection " + player);
+        //console.log("getComputerChoice " + cpu);
         if (message.slice(0, 8) == "You Win!"){
             playerScore++;
         } else if (message.slice(0, 8) == "You lose"){
             cpuScore++;
         }
 
+        console.log("player: " + playerScore)
+        console.log("cpu: " + cpuScore)
     }
-
+        console.log("player: " + playerScore)
+        console.log("cpu: " + cpuScore)
     if (playerScore > cpuScore){
-        console.log("Player Wins! " + playerScore + " - " + cpuScore)
+        let winner = ("Player Wins! " + playerScore + " - " + cpuScore);
     } else if (playerScore < cpuScore){
-        console.log("CPU Wins! " + cpuScore + " - " + playerScore)
+        let winner = ("CPU Wins! " + cpuScore + " - " + playerScore);
     } else {
-        console.log("Player Ties CPU! " + playerScore + " - " + cpuScore)
+        let winner = ("Player Ties CPU! " + playerScore + " - " + cpuScore);
     }
+    console.log(winner);
+    return winner;
 }
-
-console.log(game);
+console.log(game());
