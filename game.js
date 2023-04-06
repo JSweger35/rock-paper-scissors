@@ -22,7 +22,7 @@ function getComputerChoice(){
 //plays cpu vs player and determines who wins
 function playRound(player,cpu){
 if (player == cpu){
-    message = "Tie";
+    message = "Tie: "+player+" = "+cpu;
 } else if ((player == "ROCK" && cpu == "SCISSORS") || (player == "SCISSORS" && cpu == "PAPER") || (player == "PAPER" && cpu == "ROCK")){
     message = "You Win! "+player+" beats "+cpu;
 } else {
@@ -31,36 +31,32 @@ if (player == cpu){
     return message;
 }
 
-/*et cpu = getComputerChoice();
-let player = playerSelection();
-let message = '';*/
-let message = '';
-let playerScore = 0;
-let cpuScore = 0;
-for (let i = 1; i <= 5; i++) {
-    let cpu = getComputerChoice();
-    let player = playerSelection();
-    //playerSelection();
-    console.log("player: "+ player);
-    //getComputerChoice();
-    console.log("cpu: "+ cpu);
-    //playRound(player, cpu);
-    console.log(playRound(player, cpu));
 
-    if (message.slice(0, 8) == "You Win!"){
-        playerScore++;
-    } else if (message.slice(0,8) == "You Lose"){
-        cpuScore++;
+function game(){
+    let message = '';
+    let playerScore = 0;
+    let cpuScore = 0;
+    for (let i = 1; i <= 5; i++) {
+        let cpu = getComputerChoice();
+        let player = playerSelection();
+    
+        console.log(playRound(player, cpu));
+
+        if (message.slice(0, 8) == "You Win!"){
+            playerScore++;
+        } else if (message.slice(0, 8) == "You lose"){
+            cpuScore++;
+        }
+
     }
 
-    console.log("score | player: "+playerScore+" | cpu: "+cpuScore)
+    if (playerScore > cpuScore){
+        console.log("Player Wins! " + playerScore + " - " + cpuScore)
+    } else if (playerScore < cpuScore){
+        console.log("CPU Wins! " + cpuScore + " - " + playerScore)
+    } else {
+        console.log("Player Ties CPU! " + playerScore + " - " + cpuScore)
+    }
+}
 
-    console.log(i);
-  }
-
-/*function game(){
-    playRound(player, cpu)
-}*/
-
-//displays winner, cpu or player
-//console.log(playRound(player, cpu))
+console.log(game);
