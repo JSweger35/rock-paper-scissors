@@ -1,19 +1,14 @@
+let cpu = getComputerChoice();
+let player = playerSelection();
+let message = '';
+
+//get input from user for rock, paper, or scissors
 function playerSelection(){
     let playerSelection = prompt("Enter Rock, Paper, or Scissors:").toUpperCase();
     return playerSelection;
 }
 
-/*if (playerSelection == "ROCK" || playerSelection == "PAPER" || playerSelection == "SCISSORS"){
-    console.log(playerSelection);
-} else {
-    playerSelection = prompt("You must enter Rock, Paper, or Scissors:").toUpperCase();
-}
-
-/*while (pl < 5) {
-    text += i + "<br>";
-    i++;
-  }*/
-
+// randomly generates rock, paper, or scissors for cpu
 function getComputerChoice(){
     let rps = '';
     let randomNum = parseInt(Math.floor(Math.random()*3));
@@ -28,17 +23,17 @@ function getComputerChoice(){
     return rps;
 }
 
-let cpu = getComputerChoice();
-let player = playerSelection();
-
+//plays cpu vs player and determines who wins
+function playRound(player,cpu){
 if (player == cpu){
-    alert("Tie");
+    message = "Tie";
 } else if ((player == "ROCK" && cpu == "SCISSORS") || (player == "SCISSORS" && cpu == "PAPER") || (player == "PAPER" && cpu == "ROCK")){
-    alert("Player Wins");
+    message = "You Win! "+player+" beats "+cpu;
 } else {
-    let message = ""
-    return"CPU Wins")
+    message = "You lose! "+cpu+" beats "+player;
+}
+    return message;
 }
 
-console.log(player);
-console.log(cpu);
+//displays winner, cpu or player
+console.log(playRound(player, cpu))
