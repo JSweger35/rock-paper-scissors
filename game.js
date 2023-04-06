@@ -1,7 +1,3 @@
-let cpu = getComputerChoice();
-let player = playerSelection();
-let message = '';
-
 //get input from user for rock, paper, or scissors
 function playerSelection(){
     let playerSelection = prompt("Enter Rock, Paper, or Scissors:").toUpperCase();
@@ -35,11 +31,31 @@ if (player == cpu){
     return message;
 }
 
-for (let i = 0; i <= 4; i++) {
-    playerSelection();
-    getComputerChoice();
-    playRound(player, cpu);
+/*et cpu = getComputerChoice();
+let player = playerSelection();
+let message = '';*/
+let message = '';
+let playerScore = 0;
+let cpuScore = 0;
+for (let i = 1; i <= 5; i++) {
+    let cpu = getComputerChoice();
+    let player = playerSelection();
+    //playerSelection();
+    console.log("player: "+ player);
+    //getComputerChoice();
+    console.log("cpu: "+ cpu);
+    //playRound(player, cpu);
     console.log(playRound(player, cpu));
+
+    if (message.slice(0, 8) == "You Win!"){
+        playerScore++;
+    } else if (message.slice(0,8) == "You Lose"){
+        cpuScore++;
+    }
+
+    console.log("score | player: "+playerScore+" | cpu: "+cpuScore)
+
+    console.log(i);
   }
 
 /*function game(){
