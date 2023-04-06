@@ -35,5 +35,16 @@ if (player == cpu){
     return message;
 }
 
+for (let i = 0; i <= 4; i++) {
+    playerSelection();
+    getComputerChoice();
+    playRound(player, cpu);
+    console.log(playRound(player, cpu));
+  }
+
+/*function game(){
+    playRound(player, cpu)
+}*/
+
 //displays winner, cpu or player
-console.log(playRound(player, cpu))
+//console.log(playRound(player, cpu))
